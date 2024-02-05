@@ -8,7 +8,7 @@ export function load({cookies}){
 
     if(!id){
         id = crypto.randomUUID();
-        cookies.set('userid',id,{path:'/todo'})
+        cookies.set('userid',id,{path:'/todoAction'})
     }
 
     return {

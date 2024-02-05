@@ -16,22 +16,35 @@ export function getTodos(userid) {
 }
 
 export function createTodo(userid, description) {
+
+	// if (!db.has(userid)) {
+	// 	db.set(userid, new Map());
+	// }
     
     if(description === ''){
         throw new Error('todo must have a description');
     }
-
 	const todos = db.get(userid);
+//   console.log("before todos")
+//     if([...db.values()].find((todo)=> todo.description === description)){
+//         throw new Error('todo must be unique');
+//     }
 
-    if(todos.find((todo)=> todo.description === description)){
-        throw new Error('todo must be unique');
-    }
-
-	todos.push({
-		id: crypto.randomUUID(),
+	const id = crypto.randomUUID();
+	db.set(id, {
+		id,
 		description,
 		done: false
 	});
+
+	return {
+		id
+	};
+}
+
+export function toggleTodo({userid,id,done}){
+	const todos = db.get(userid);
+	todos.get(id).done = done;
 }
 
 export function deleteTodo(userid, todoid) {
