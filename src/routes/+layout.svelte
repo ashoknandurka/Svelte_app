@@ -8,7 +8,7 @@
 	<a href="/" aria-current={$page.url.pathname === '/'}>home</a>
 	<a href="/about" aria-current={$page.url.pathname === '/about'}>about</a>
     <a href="/blog">blog</a>
-	<a href="/todoAction">todo</a>
+	<!-- <a href="/todoAction">todo</a> -->
 	<a href="/todos">todos</a>
     <a href="/a/deeply/nested/route">Deeply_nested_route</a>
 	<a href="/expected">expectedError_page</a>

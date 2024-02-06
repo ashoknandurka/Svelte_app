@@ -1,1 +1,1 @@
-<h1>this is c</h1>
+<h1>this is page c</h1>
